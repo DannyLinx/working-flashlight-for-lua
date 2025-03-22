@@ -1,0 +1,25 @@
+--put in StarterCharacterScripts
+function createlight()
+	local char = game.Players.LocalPlayer.Character or script.Parent
+	local head = char:WaitForChild("Head")
+	local light = head:FindFirstChild("Light")
+	local player = game.Players.LocalPlayer
+	if light then
+		light:Destroy()
+	end
+		local makelight = Instance.new('SpotLight', head)
+	    makelight.Name = "headlight"
+	    makelight.Angle = 60
+		makelight.Range = 33
+		makelight.Shadows = true
+	makelight.Brightness = 1.7
+	end
+game:GetService('UserInputService').InputBegan:Connect(function(hi)
+	if hi.KeyCode == Enum.KeyCode.F then
+		if game.Players.LocalPlayer.Character.Head:FindFirstChild("headlight") then
+			game.Players.LocalPlayer.Character.Head:FindFirstChild("headlight"):Destroy()
+		else
+			createlight()
+		end
+	end
+end)
