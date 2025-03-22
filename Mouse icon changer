@@ -1,0 +1,6 @@
+while true do
+	wait()
+	local plr = game.Players.LocalPlayer
+	local mouse = plr:GetMouse()
+	mouse.Icon = "https://create.roblox.com/store/asset/9650994794"
+end
